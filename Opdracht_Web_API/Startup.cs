@@ -28,7 +28,7 @@ namespace Opdracht_Web_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<ApplicationContext>(opt => opt.UseSqlServer(@"Server=(localdb)\\mssqllocaldb;Database=StoreAPIDb;Trusted_Connection=True"));
+            services.AddDbContext<ApplicationContext>(opt => opt.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=StoreAPIDb;Trusted_Connection=True"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
