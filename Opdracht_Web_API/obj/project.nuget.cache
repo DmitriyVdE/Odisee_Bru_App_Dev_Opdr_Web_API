@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BLCIdwtx287Tv4MGVtVXz0PlRv0STLnfQPgM4w2uVH6gaFjw8rmsdJ6lwjlRRFby1rg5qp7DfiPwHhfDOW3afg==",
+  "dgSpecHash": "Vhd7jStbJybpfZgJIPEcwCpJZs7j7W7SMZe0MZeDrEFiRzrvkL8W840O5aE7TZnnW2JTt2lWIdSphVAL8rNITA==",
   "success": true,
-  "projectFilePath": "C:\\repositories\\Opdracht_Web_API\\Opdracht_Web_API\\Opdracht_Web_API.csproj",
+  "projectFilePath": "C:\\repositories\\Odisee_Bru_App_Dev_Opdr_Web_API\\Opdracht_Web_API\\Opdracht_Web_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dmitriy\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dmitriy\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

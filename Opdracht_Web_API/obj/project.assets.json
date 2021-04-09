@@ -5802,11 +5802,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repositories\\Opdracht_Web_API\\Opdracht_Web_API\\Opdracht_Web_API.csproj",
+      "projectUniqueName": "C:\\repositories\\Odisee_Bru_App_Dev_Opdr_Web_API\\Opdracht_Web_API\\Opdracht_Web_API.csproj",
       "projectName": "Opdracht_Web_API",
-      "projectPath": "C:\\repositories\\Opdracht_Web_API\\Opdracht_Web_API\\Opdracht_Web_API.csproj",
+      "projectPath": "C:\\repositories\\Odisee_Bru_App_Dev_Opdr_Web_API\\Opdracht_Web_API\\Opdracht_Web_API.csproj",
       "packagesPath": "C:\\Users\\Dmitriy\\.nuget\\packages\\",
-      "outputPath": "C:\\repositories\\Opdracht_Web_API\\Opdracht_Web_API\\obj\\",
+      "outputPath": "C:\\repositories\\Odisee_Bru_App_Dev_Opdr_Web_API\\Opdracht_Web_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dmitriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
