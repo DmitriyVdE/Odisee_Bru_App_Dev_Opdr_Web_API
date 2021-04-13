@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Opdracht_Web_API.Models
 {
-    public class StoreItem
+    public class Product
     {
         public int Id { get; set; }
 
@@ -15,6 +15,11 @@ namespace Opdracht_Web_API.Models
 
         [Required]
         public string Name { get; set; }
+
+        [Required]
+        public int CategoryId { get; set; }
+
+        public Category Category { get; set; }
 
         [Required]
         public double BuyPrice { get; set; }
@@ -29,13 +34,6 @@ namespace Opdracht_Web_API.Models
 
         [Required]
         public Boolean Active { get; set; }
-
-        public ICollection<Order> Orders { get; set; }
-
-        public double GetSellPrice()
-        {
-            return BuyPrice * (100 + TaxLevel.TaxPercentage);
-        }
 
         public Boolean GetInStock()
         {

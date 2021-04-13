@@ -10,100 +10,101 @@ using Opdracht_Web_API.Models;
 
 namespace Opdracht_Web_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/categories")]
     [ApiController]
-    public class TaxesController : ControllerBase
+    public class CategoryController : ControllerBase
     {
         private readonly ApplicationContext _context;
 
-        public TaxesController(ApplicationContext context)
+        public CategoryController(ApplicationContext context)
         {
             _context = context;
         }
 
         [HttpGet("")]
-        public ActionResult<IEnumerable<Tax>> GetAll()
+        public ActionResult<IEnumerable<Category>> GetAll()
         {
-            return _context.Taxes.ToList();
+            return _context.Categories.ToList();
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Tax> GetTax(int id)
+        public ActionResult<Category> GetCategory(int id)
         {
-            Tax tax = _context.Taxes
+            Category category = _context.Categories
                 .Include(u => u.Products)
                 .FirstOrDefault(u => u.Id == id);
 
-            if (tax == null)
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return tax;
+            return category;
         }
 
         [HttpGet("{id}/products")]
-        public ActionResult<IEnumerable<Product>> GetTaxProducts(int id)
+        public ActionResult<IEnumerable<Product>> GetCategoryProducts(int id)
         {
-            Tax tax = _context.Taxes
+            _ = _context.Taxes.ToList();
+
+            Category category = _context.Categories
                 .Include(u => u.Products)
                 .FirstOrDefault(u => u.Id == id);
 
-            if (tax == null)
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return tax.Products.ToList();
+            return category.Products.ToList();
         }
 
         [HttpPost("")]
-        public ActionResult<Tax> AddTaxLevel(Tax tax)
+        public ActionResult<Category> AddCategory(Category category)
         {
-            _context.Taxes.Add(tax);
+            _context.Categories.Add(category);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetTax), new { id = tax.Id }, tax);
+            return CreatedAtAction(nameof(AddCategory), new { id = category.Id }, category);
         }
 
         [HttpPost("{id}")]
-        public ActionResult<Tax> EditTaxLevel(int id, Tax tax)
+        public ActionResult<Category> Editcategory(int id, Category category)
         {
-            if (id != tax.Id)
+            if (id != category.Id)
             {
                 return BadRequest();
             }
 
-            Tax toUpdate = _context.Taxes.Find(id);
+            Category toUpdate = _context.Categories.Find(id);
             if (toUpdate == null)
             {
                 return NotFound();
             }
 
-            toUpdate.Name = tax.Name;
-            toUpdate.TaxPercentage = tax.TaxPercentage;
+            toUpdate.Name = category.Name;
 
             _context.SaveChanges();
 
             return NoContent();
         }
-
+        
         [HttpDelete("{id}")]
-        public IActionResult DeleteTaxLevel(int id, Tax tax)
+        public IActionResult Deletecategory(int id, Category category)
         {
-            if (id != tax.Id)
+            if (id != category.Id)
             {
                 return BadRequest();
             }
 
-            Tax toDelete = _context.Taxes.Find(id);
+            Category toDelete = _context.Categories.Find(id);
 
             if (toDelete == null)
             {
                 return NotFound();
             }
 
-            _context.Taxes.Remove(toDelete);
+            _context.Categories.Remove(toDelete);
             _context.SaveChanges();
 
             return NoContent();

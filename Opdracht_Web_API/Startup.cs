@@ -28,6 +28,7 @@ namespace Opdracht_Web_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // .AddNewtonsoftJson()
             services.AddDbContext<ApplicationContext>(opt => opt.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=StoreAPIDb;Trusted_Connection=True"));
         }
 
