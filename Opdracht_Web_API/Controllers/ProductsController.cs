@@ -41,6 +41,16 @@ namespace Opdracht_Web_API.Controllers
                 .ToList();
         }
 
+        [HttpGet("search")]
+        public ActionResult<IEnumerable<Product>> SearchProduct(string name)
+        {
+            return _context.Products
+                .Include(p => p.TaxLevel)
+                .Include(p => p.Category)
+                .Where(p => p.Name.Contains(name))
+                .ToList();
+        }
+
         [HttpGet("{id}")]
         public ActionResult<Product> GetProduct(int id)
         {
