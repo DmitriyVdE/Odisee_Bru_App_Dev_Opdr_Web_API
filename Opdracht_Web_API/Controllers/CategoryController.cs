@@ -68,7 +68,7 @@ namespace Opdracht_Web_API.Controllers
             return CreatedAtAction(nameof(AddCategory), new { id = category.Id }, category);
         }
 
-        [HttpPost("{id}")]
+        [HttpPut("{id}")]
         public ActionResult<Category> Editcategory(int id, Category category)
         {
             if (id != category.Id)

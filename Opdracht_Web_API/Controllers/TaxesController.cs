@@ -66,7 +66,7 @@ namespace Opdracht_Web_API.Controllers
             return CreatedAtAction(nameof(GetTax), new { id = tax.Id }, tax);
         }
 
-        [HttpPost("{id}")]
+        [HttpPut("{id}")]
         public ActionResult<Tax> EditTaxLevel(int id, Tax tax)
         {
             if (id != tax.Id)

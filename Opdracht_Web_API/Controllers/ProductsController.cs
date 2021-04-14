@@ -93,7 +93,7 @@ namespace Opdracht_Web_API.Controllers
             return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
         }
 
-        [HttpPost("{id}")]
+        [HttpPut("{id}")]
         public ActionResult<Product> EditProduct(int id, Product product)
         {
             if (id != product.Id)
